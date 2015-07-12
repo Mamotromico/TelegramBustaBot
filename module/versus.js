@@ -7,7 +7,7 @@ function VersusCommand(user, vs_msg) {
 		var res = Math.floor(Math.random() * (vs_data.length - 1)) + 1;
 		msg = user + ", o vencedor supremo foi " + vs_data[res] + "!";
 	}
-	SendMessage(chat_id, msg, msg_id);
+	return msg;
 }
 
 module.exports = {

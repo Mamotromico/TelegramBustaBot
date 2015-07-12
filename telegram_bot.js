@@ -58,6 +58,8 @@ function AnswerMessages(obj) {
 				}
 				if (struct.message.text.isCommand("help")) {
 					SendMessage(struct, HelpCommand(struct));
+				}else if(struct.message.text.indexOf("@BustaBot")){
+					SendMessage(struct, MentionCommand(struct));
 				}
 			}
 		}
@@ -85,11 +87,6 @@ function HelpCommand(struct) {
 
 function MentionCommand(struct) {
 	var msg = "Digala, " + struct.message.from.first_name + ", meu chapa!";
-	if (struct.message.from.first_name == "amder") {
-		msg = "amder, teu cu.";
-	} else if (struct.message.from.first_name == "Leonardo") {
-		msg = "Que foi, pivete?";
-	}
 	return msg;
 }
 

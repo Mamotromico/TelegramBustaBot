@@ -1,6 +1,6 @@
 function AskCommand(user, question) {
 	msg = user + ", eu sinceramente não sei.";
-	SendMessage(chat_id, msg, msg_id);
+	return msg;
 }
 
 module.exports = {

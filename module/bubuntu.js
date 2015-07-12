@@ -86,10 +86,6 @@ function generateName() {
 	return (selected_animal + " " + selected_adjective);
 }
 
-function BubuntuCommand(user, chat_id, msg, msg_id) {
-	SendMessage(chat_id, generateName(), msg_id);
-}
-
 initEverything();
 
 module.exports = {
