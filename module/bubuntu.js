@@ -1,37 +1,37 @@
 alphabet = "ABCDEFGHIJLMNOPQRSTUVXZ";
 
 animalName = new Array();
-animalName["A"] = ["fArara", "fAnaconda", "fAbelha", "f&Aacute;guia", "mAlce", "fAnta", "fAndorinha", "mAnt&iacute;lope", "fAranha", "mAvestruz"];
-animalName["B"] = ["mBabu&iacute;no", "fBorboleta", "mBulldog", "fBarata", "mBoi", "fBaleia", "mBis&atilde;o", "mBurro"];
-animalName["C"] = ["mCavalo", "mCamelo", "mCachorro", "fCadela", "mC&aacute;gado", "mCalango", "mCarrapato", "mCaramujo", "mCanguru", "mCaracol", "mCaranguejo", "fCobra", "mCoelho", "mCoiote"];
-animalName["D"] = ["mDromed&aacute;rio", "fDoninha", "mDiabo-da-tasm&acirc;nia", "mDrag&atilde;o"];
-animalName["E"] = ["fEquidina", "f&Eacute;gua", "mEsquilo", "fEnguia", "mElefante"];
-animalName["F"] = ["fFoca", "mFais&atilde;o"];
+animalName["A"] = ["fArara", "fAnaconda", "fAbelha", "fÁguia", "mAlce", "fAnta", "fAndorinha", "mAntílope", "fAranha", "mAvestruz"];
+animalName["B"] = ["mBabuíno", "fBorboleta", "mBulldog", "fBarata", "mBoi", "fBaleia", "mBisão", "mBurro"];
+animalName["C"] = ["mCavalo", "mCamelo", "mCachorro", "fCadela", "mCÁgado", "mCalango", "mCarrapato", "mCaramujo", "mCanguru", "mCaracol", "mCaranguejo", "fCobra", "mCoelho", "mCoiote"];
+animalName["D"] = ["mDromedÁrio", "fDoninha", "mDiabo-da-tasmânia", "mDragão"];
+animalName["E"] = ["fEquidina", "fégua", "mEsquilo", "fEnguia", "mElefante"];
+animalName["F"] = ["fFoca", "mFaisão"];
 animalName["G"] = ["mGato", "fGata", "mGuepardo"];
-animalName["H"] = ["mHipop&oacute;tamo", "mHamster", "fHiena"];
+animalName["H"] = ["mHipopótamo", "mHamster", "fHiena"];
 animalName["I"] = ["fIguana", "mIaque"];
 animalName["J"] = ["mJabuti", "mJumento", "mJaguar", "mJavali"];
-animalName["L"] = ["fLesma", "fLebre", "mLe&atilde;o", "mLeopardo"];
+animalName["L"] = ["fLesma", "fLebre", "mLeão", "mLeopardo"];
 animalName["M"] = ["mMacaco", "fMinhoca", "fMedusa"];
 animalName["N"] = ["fNaja", "mNarval"];
-animalName["O"] = ["mOrnitorrinco", "fOvelha", "mOuri&ccedil;o", "fOstra"];
+animalName["O"] = ["mOrnitorrinco", "fOvelha", "mOuriço", "fOstra"];
 animalName["P"] = ["mPapagaio", "mPeru", "fPerua", "mPorco", "fPorca", "mPanda", "fPata", "mPato"];
 animalName["Q"] = ["mQuati"];
 animalName["R"] = ["mRato", "fRaposa", "mRinoceronte"];
 animalName["S"] = ["mSapo", "mSuricate", "fSiriema"];
-animalName["T"] = ["fTartaruga", "mTigre", "fTigresa", "mTrit&atilde;o"];
+animalName["T"] = ["fTartaruga", "mTigre", "fTigresa", "mTritão"];
 animalName["U"] = ["mUrubu", "mUrso", "fUrsa"];
-animalName["V"] = ["mVeado", "fVaca", "fV&iacute;bora"];
-animalName["X"] = ["mXimango", "mXex&eacute;u"];
-animalName["Z"] = ["fZebra", "mZang&atilde;o"];
+animalName["V"] = ["mVeado", "fVaca", "fVíbora"];
+animalName["X"] = ["mXimango", "mXexéu"];
+animalName["Z"] = ["fZebra", "mZangão"];
 
 adjectiveName = new Array();
 adjectiveName["m"] = new Array();
 adjectiveName["f"] = new Array();
 
-maleAdjectiveList = ["Arruaceiro", "Arrombado", "Agitado", "Arretado", "Bab&atilde;o", "Bolado", "Babaca", "Bei&ccedil;udo", "Burro", "Best&atilde;o", "Bobalh&atilde;o", "Cagado", "Coitado", "Chapado", "Coisado", "Doid&atilde;o", "Derrubado", "Esdr&uacute;xulo", "Exc&eacute;ntrico", "Fardado", "Ferrado", "F%#@!&o", "Fofoqueiro", "Fuleiro", "Fuleragi", "Gaiato", "Hipocondriaco", "Ing&ecirc;nuo", "Judiado", "Lesado", "Maluco", "Manco", "Noiado", "Nojento", "Ousado", "Pirangueiro", "Querido", "Quengado", "Queixudo", "Ro&iacute;do", "Raparigueiro", "Seboso", "Tarado", "Tapado", "Ut&oacute;pico", "Ultrapassado", "Valente", "Viado", "Virtuoso", "X&ecirc;roso", "Zaroio", "Maroto", "Xexelento", "Zangado", "Pan&ccedil;udo", "Glamuroso", "Paran&oacute;ico", "Tetudo", "Suado", "Chupador", "Avexado", "Doidinho", "Dorminhoco", "Violento", "Sarado", "Hipertenso", "Rasteiro", "Raivoso", "Galático", "Joiado"];
-femaleAdjectiveList = ["Arruaceira", "Arrombada", "Agitada", "Arretada", "Aloca", "Babona", "Bolada", "Babaca", "Bei&ccedil;uda", "Burra", "Bestona", "Bobalhona", "Baranga", "Cagada", "Coitada", "Chapada", "Coisada", "Doidona", "Derrubada", "Esdr&uacute;xula", "Exc&eacute;ntrica", "Fardada", "Ferrada", "F%#@!&a", "Fofoqueira", "Fuleira", "Gaiata", "Hipocondriaca", "Ing&ecirc;nua", "Judiada", "Lesada", "Maluca", "Manca", "Noiada", "Nojenta", "Ousada", "Pirangueira", "Querida", "Quengada", "Queixuda", "Ro&iacute;da", "Raparigueira", "Sebosa", "Tarada", "Tapada", "Ut&oacute;pica", "Ultrapassada", "Valente", "Viada", "Virtuosa", "X&ecirc;rosa", "Zaroia", "Mimosa", "Marota", "Xexelenta", "Zangada", "Pan&ccedil;uda", "Glamurosa", "Suada", "Paran&oacute;ica", "Avexada", "Doidinha", "Dorminhoca", "Violenta", "Sarada", "Hipertensa", "Rasteira", "Raivosa", "Galática", "Joiada"];
-unisexAdjectiveList = ["Anormal", "Fuleragi", "Espilicute", "Excepcional", "Dormente", "Capenga", "Paia", "Patife", "Xeidicoisa", "Vol&aacute;til", "Paranormal", "Tribuf&uacute;", "Boboca", "Viril"];
+maleAdjectiveList = ["Arruaceiro", "Arrombado", "Agitado", "Arretado", "Babão", "Bolado", "Babaca", "Beiçudo", "Burro", "Bestão", "Bobalhão", "Cagado", "Coitado", "Chapado", "Coisado", "Doidão", "Derrubado", "Esdrúxulo", "Excéntrico", "Fardado", "Ferrado", "F%#@!&o", "Fofoqueiro", "Fuleiro", "Fuleragi", "Gaiato", "Hipocondriaco", "Ingênuo", "Judiado", "Lesado", "Maluco", "Manco", "Noiado", "Nojento", "Ousado", "Pirangueiro", "Querido", "Quengado", "Queixudo", "Roído", "Raparigueiro", "Seboso", "Tarado", "Tapado", "Utópico", "Ultrapassado", "Valente", "Viado", "Virtuoso", "Xêroso", "Zaroio", "Maroto", "Xexelento", "Zangado", "Pançudo", "Glamuroso", "Paranóico", "Tetudo", "Suado", "Chupador", "Avexado", "Doidinho", "Dorminhoco", "Violento", "Sarado", "Hipertenso", "Rasteiro", "Raivoso", "Galático", "Joiado"];
+femaleAdjectiveList = ["Arruaceira", "Arrombada", "Agitada", "Arretada", "Aloca", "Babona", "Bolada", "Babaca", "Beiçuda", "Burra", "Bestona", "Bobalhona", "Baranga", "Cagada", "Coitada", "Chapada", "Coisada", "Doidona", "Derrubada", "Esdrúxula", "Excéntrica", "Fardada", "Ferrada", "F%#@!&a", "Fofoqueira", "Fuleira", "Gaiata", "Hipocondriaca", "Ingênua", "Judiada", "Lesada", "Maluca", "Manca", "Noiada", "Nojenta", "Ousada", "Pirangueira", "Querida", "Quengada", "Queixuda", "Roída", "Raparigueira", "Sebosa", "Tarada", "Tapada", "Utópica", "Ultrapassada", "Valente", "Viada", "Virtuosa", "Xêrosa", "Zaroia", "Mimosa", "Marota", "Xexelenta", "Zangada", "Pançuda", "Glamurosa", "Suada", "Paranóica", "Avexada", "Doidinha", "Dorminhoca", "Violenta", "Sarada", "Hipertensa", "Rasteira", "Raivosa", "Galática", "Joiada"];
+unisexAdjectiveList = ["Anormal", "Fuleragi", "Espilicute", "Excepcional", "Dormente", "Capenga", "Paia", "Patife", "Xeidicoisa", "Volátil", "Paranormal", "Tribufú", "Boboca", "Viril"];
 
 function genRandom(min, max) {
 	return Math.floor((Math.random() * max) + min);
