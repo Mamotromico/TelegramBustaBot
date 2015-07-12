@@ -4,11 +4,11 @@ var guess_placar = [];
 function GuessCommand(user, guess) {
 	var g = guess.split(" ");
 	if (g.length != 2) {
-		return;
+		return user + ", você não digitou o número correto de argumentos!";
 	}
 	var value = parseInt(g[1]);
 	if (isNaN(value)) {
-		return;
+		return user + ", o argumento que você passou não é um numero!";
 	}
 	var msg = "";
 	console.log("The values are:" + value + " " + guess_number);

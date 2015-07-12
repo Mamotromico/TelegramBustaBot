@@ -1,5 +1,3 @@
-// teste
-
 function lol(val){
 	return val*2;
 }
