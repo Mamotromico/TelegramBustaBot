@@ -1,5 +1,7 @@
 var https = require('https');
 
+var key = require('./key');
+
 var modules = {
 	ask: require('./module/ask'),
 	bubuntu: require('./module/bubuntu'),
@@ -94,7 +96,7 @@ function SendMessage(struct, msg) {
 	//var final_msg = msg.replace(/[^a-zA-Z0-9 !,\(\)\-+\[\]\n@\{\}\\\/\<\>\|]/g, "*");
 	var final_msg = encodeURI(msg);
 	console.log("Sending msg: " + final_msg);
-	https.get("https://api.telegram.org/bot113133208:AAFnkV1DcPtAowF2msEJ-ObC-fwj6iNiY8Y/sendMessage?chat_id=" + struct.message.chat.id + "&text=" + final_msg + "&reply_to_message_id=" + struct.message.message_id, function(res) {
+	https.get("https://api.telegram.org/bot"+key.value()+"/sendMessage?chat_id=" + struct.message.chat.id + "&text=" + final_msg + "&reply_to_message_id=" + struct.message.message_id, function(res) {
 		if (res.statusCode == 200) {
 			console.log("Sending msg 200, OK!");
 		}
@@ -105,7 +107,7 @@ function SendMessage(struct, msg) {
 
 // Will keep scanning for new messages, and answering them.
 setInterval(function() {
-	https.get("https://api.telegram.org/bot113133208:AAFnkV1DcPtAowF2msEJ-ObC-fwj6iNiY8Y/getUpdates?offset=" + last_update_id, function(res) {
+	https.get("https://api.telegram.org/bot"+key.value()+"/getUpdates?offset=" + last_update_id, function(res) {
 		if (res.statusCode == 200) {
 			var http_input = "";
 			res.setEncoding('utf8');
