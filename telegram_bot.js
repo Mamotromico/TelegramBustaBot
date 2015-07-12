@@ -60,7 +60,7 @@ function AnswerMessages(obj) {
 				}
 				if (struct.message.text.isCommand("help")) {
 					SendMessage(struct, HelpCommand(struct));
-				}else if(struct.message.text.indexOf("@BustaBot")){
+				}else if(struct.message.text.indexOf("@BustaBot")>-1){
 					SendMessage(struct, MentionCommand(struct));
 				}
 			}
@@ -70,7 +70,7 @@ function AnswerMessages(obj) {
 
 function HelpCommand(struct) {
 	var msg = struct.message.from.first_name + ", você gostaria de saber mais sobre o BustaBot?\n";
-	msg += "O bot possui os seguintes comandos: \n";
+	msg += "O bot possui os seguintes comandos: \n\n";
 	for (var mod in modules) {
 		if (modules.hasOwnProperty(mod)) {
 			console.log("Printing "+mod+" help:" + modules[mod].help());
@@ -80,7 +80,7 @@ function HelpCommand(struct) {
 	// msg += "/ask <algo> - Pergunte qualquer coisa ao @BustaBot!\n";
 	// msg += "/guess <valor> - Adivinhe o número que estou pensando!\n";
 	// msg += "/versus ([competidores]) - Descubra quem é o melhor!\n";
-	msg += "/help - Peca ajuda ao @BustaBot!\n";
+	msg += "/help - Peca ajuda ao @BustaBot!\n\n";
 	msg += "<> são parâmetros obrigatórios.\n";
 	msg += "() são parâmetros múltiplos.\n";
 	msg += "[] são parâmetros opcionais.\n";
