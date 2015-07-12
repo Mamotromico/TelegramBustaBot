@@ -4,13 +4,16 @@ var key = require('./key');
 
 var modules = {
 	ask: require('./module/ask'),
+	attr: require('./module/attr'),
 	bubuntu: require('./module/bubuntu'),
 	coin: require('./module/coin'),
 	dice: require('./module/dice'),
 	fodaci: require('./module/fodaci'),
 	guess: require('./module/guess'),
+	math: require('./module/math'),
 	rpg: require('./module/rpg'),
 	teste : require('./module/teste'),
+	ttt : require('./module/ttt'),
 	versus: require('./module/versus'),	
 }
 

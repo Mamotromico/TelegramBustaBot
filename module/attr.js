@@ -1,10 +1,10 @@
 function PrintAttribute(value){
 	var attr = "";
 	for(var i=0; i<value; i++){
-		attr += "🌕";
+		attr += "⚫";
 	}
 	for(var i=value; i<10; i++){
-		attr += "🌑";
+		attr += "⚪";
 	}
 	return attr;
 }
@@ -36,7 +36,7 @@ function AttrCommand(user, msg) {
 		for (var i = 0; i < attributes[a].length; i++) {
 			attribute_value += attributes[a].charCodeAt(i);
 		}
-		var res = Math.floor(name_value + attribute_value)%10+1;
+		var res = Math.floor(name_value * attribute_value)%10+1;
 		out += attributes[a] + ":\t\t" + PrintAttribute(res) + "\n";
 	}
 
