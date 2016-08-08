@@ -1,8 +1,8 @@
 commandName = "/mata";
 
-frases = {
-	{"Bateu em","lentamente."}
-}
+frases = [
+	["Bateu em","lentamente."]
+]
 
 function Command(user, vs_msg) {
 	var msg = "";
