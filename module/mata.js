@@ -13,7 +13,7 @@ acao = [
 "lambeu",
 "capturou",
 "ultou em",
-"meteu um sarrafo em"
+"meteu um sarrafo em",
 "rebolou uma havaiana de pau em"
 ]
 
