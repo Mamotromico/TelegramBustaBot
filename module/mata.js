@@ -10,6 +10,7 @@ function Command(user, vs_msg) {
 		msg = user + ", diga alguém pra eu matar!";
 	} else {
 		msg = frases[0][0] + frases[0][1];
+		msg += "Será que deu?";
 	}
 	return msg;
 }
