@@ -43,6 +43,10 @@ function AnswerMessages(obj) {
 			if (struct.update_id < last_update_id) {
 				continue;
 			}
+			if(!struct.message || !struct.message.text){
+				console.log("Invalid structures");
+				continue;
+			}
 			// Update the last message id parsed.
 			last_update_id = Math.max(last_update_id, struct.update_id + 1);
 
@@ -51,7 +55,7 @@ function AnswerMessages(obj) {
 			//text_message: struct.message.text,
 			//message_id: struct.message.message_id
 
-			//console.log("Answering MSG ID: " + struct.update_id + " from " + struct.message.from.first_name);
+			console.log("Answering MSG ID: " + struct.update_id + " from " + struct.message.from.first_name);
 			console.log(struct.message.text);
 
 			if (struct.message.text) {
