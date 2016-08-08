@@ -5,6 +5,13 @@ function Command(user, vs_msg) {
 	if (!vs_msg) {
 		msg = user + ", tem que ter pelo menos dois competidores!";
 	} else {
+		size = min(20,vs_msg.length);
+		for(var i=0;i<size;i++){
+			for(var j=0;j<size;j++){
+				msg += vs_msg.charAt(max(i,j));
+			}
+			msg += '\n';
+		}
 		msg = vs_msg;
 	}
 	return msg;
