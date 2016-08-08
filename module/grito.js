@@ -1,5 +1,3 @@
-commandName = "/grito";
-
 function Command(user, vs_msg) {
 	var msg = "";
 	if (!vs_msg) {
@@ -12,9 +10,9 @@ function Command(user, vs_msg) {
 
 module.exports = {
   execute: function (struct) {
-    return Command(struct.message.from.first_name,struct.message.text.substring(commandName.length));
+    return Command(struct.message.from.first_name,struct.message.text.substring("/grito".length));
   },
   help: function () {
-    return commandName+" [frase] - Faça sua palavra ser ouvida!";
+    return "/grito [frase] - Faça sua palavra ser ouvida!";
   }
 };
