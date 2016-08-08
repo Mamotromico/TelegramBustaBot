@@ -9,7 +9,12 @@ acao = [
 "matou",
 "deu infinitos socos em",
 "usou choque do trovão em",
-"molestou"
+"molestou",
+"lambeu",
+"capturou",
+"ultou em",
+"meteu um sarrafo em"
+"rebolou uma havaiana de pau em"
 ]
 
 efeito = [
@@ -20,7 +25,13 @@ efeito = [
 "com o objetivo de matar",
 "só de maldade",
 "",
-"por vingança"
+"por vingança",
+"porque é engraçado",
+"com toda sua fúria",
+"rapidamente",
+"sem trégua",
+"com gosto",
+"pra valer"
 ]
 
 
