@@ -12,7 +12,6 @@ function Command(user, vs_msg) {
 			}
 			msg += '\n';
 		}
-		msg = vs_msg;
 	}
 	return msg;
 }
