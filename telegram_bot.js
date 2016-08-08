@@ -15,6 +15,7 @@ var modules = {
 	teste : require('./module/teste'),
 	ttt : require('./module/ttt'),
 	versus: require('./module/versus'),	
+	grito: require('./module/grito'),	
 }
 
 var last_update_id = 0;
