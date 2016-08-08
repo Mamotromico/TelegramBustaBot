@@ -105,7 +105,7 @@ function SendMessage(struct, msg) {
 	//var final_msg = msg.replace(/[^a-zA-Z0-9 !,\(\)\-+\[\]\n@\{\}\\\/\<\>\|]/g, "*");
 	var final_msg = encodeURI(msg);
 	console.log("Sending msg: " + final_msg);
-	https.get("https://api.telegram.org/bot"+key.value()+"/sendMessage?chat_id=" + struct.message.chat.id + "&text=" + final_msg + "&reply_to_message_id=" + struct.message.message_id, function(res) {
+	https.get("https://api.telegram.org/bot"+key.value()+"/sendMessage?chat_id=" + struct.message.chat.id + "&text=" + final_msg + "&reply_to_message_id=" + struct.message.message_id+"&parse_mode=Markdown", function(res) {
 		if (res.statusCode == 200) {
 			console.log("Sending msg 200, OK!");
 		}
