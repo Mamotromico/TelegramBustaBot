@@ -50,6 +50,6 @@ module.exports = {
     return Command(struct.message.from.first_name,struct.message.text.substring(commandName.length+1));
   },
   help: function () {
-    return commandName+" [usuario] - Mate alguém a sua escolha!";
+    return commandName+" [usuario]";
   }
 };

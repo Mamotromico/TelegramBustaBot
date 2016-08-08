@@ -15,6 +15,6 @@ module.exports = {
     return VersusCommand(struct.message.from.first_name,struct.message.text);
   },
   help: function () {
-    return "/versus ([competidores]) - Descubra quem é o melhor!";
+    return "/versus ([competidores])";
   }
 };
