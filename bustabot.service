@@ -1,5 +1,6 @@
 [Unit]
 Description=Busta Bot
+After=network.target
 
 [Service]
 ExecStart=~/TelegramBustaBot/telegram_bot.js
