@@ -85,7 +85,7 @@ function HelpCommand(struct) {
 	for (var mod in modules) {
 		if (modules.hasOwnProperty(mod)) {
 			console.log("Printing "+mod+" help:" + modules[mod].help());
-			msg += modules[mod].help() + "\n";
+			//msg += modules[mod].help() + "\n";
 		}
 	}
 	// msg += "/ask <algo> - Pergunte qualquer coisa ao @BustaBot!\n";
