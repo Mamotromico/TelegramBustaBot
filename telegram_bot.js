@@ -51,7 +51,7 @@ function AnswerMessages(obj) {
 			//text_message: struct.message.text,
 			//message_id: struct.message.message_id
 
-			console.log("Answering MSG ID: " + struct.update_id + " from " + struct.message.from.first_name);
+			//console.log("Answering MSG ID: " + struct.update_id + " from " + struct.message.from.first_name);
 			console.log(struct.message.text);
 
 			if (struct.message.text) {
