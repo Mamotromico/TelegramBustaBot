@@ -39,6 +39,6 @@ module.exports = {
     return Command(struct.message.from.first_name,struct.message.text.substring(commandName.length+1));
   },
   help: function () {
-    return commandName+" [frase] - Faça sua palavra ser ouvida!";
+    return commandName+" [usuario] - Mate alguém a sua escolha!";
   }
 };
