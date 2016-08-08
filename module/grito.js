@@ -10,7 +10,7 @@ function Command(user, vs_msg) {
 
 module.exports = {
   execute: function (struct) {
-    return Command(struct.message.from.first_name,struct.message.text.substring("/grito".length));
+    return Command(struct.message.from.first_name,struct.message.text);
   },
   help: function () {
     return "/grito [frase] - Faça sua palavra ser ouvida!";
