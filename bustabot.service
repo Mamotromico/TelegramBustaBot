@@ -1,0 +1,14 @@
+[Unit]
+Description=Busta Bot
+
+[Service]
+ExecStart=~/TelegramBustaBot/telegram_bot.js
+Restart=always
+User=nobody
+Group=nobody
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=~/TelegramBustaBot
+
+[Install]
+WantedBy=multi-user.target
