@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var https = require('https');
 
 var key = require('./key');
@@ -16,6 +17,7 @@ var modules = {
 	ttt : require('./module/ttt'),
 	versus: require('./module/versus'),	
 	grito: require('./module/grito'),	
+	mata: require('./module/mata'),	
 }
 
 var last_update_id = 0;

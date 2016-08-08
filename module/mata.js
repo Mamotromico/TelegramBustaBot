@@ -1,19 +1,15 @@
-commandName = "/grito";
+commandName = "/mata";
+
+frases = {
+	{"Bateu em","lentamente."}
+}
 
 function Command(user, vs_msg) {
 	var msg = "";
 	if (!vs_msg) {
-		msg = user + ", diga algo pra eu gritar!";
+		msg = user + ", diga alguém pra eu matar!";
 	} else {
-		size = Math.min(20,vs_msg.length);
-		msg = "<code>";
-		for(var i=0;i<size;i++){
-			for(var j=0;j<size;j++){
-				msg += vs_msg.charAt(Math.max(i,j));
-			}
-			msg += '\n';
-		}
-		msg += "</code>";
+		msg = frases[0][0] + frases[0][1];
 	}
 	return msg;
 }
