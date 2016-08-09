@@ -2,22 +2,21 @@ var guess_number = Math.floor(Math.random() * 1000) + 1;
 var guess_placar = [];
 
 function GuessCommand(user, guess) {
-	var g = guess.split(" ");
-	if (g.length != 2) {
-		return user + ", você não digitou o número correto de argumentos!";
+	if (guess == "") {
+		return user + ", você não chutou um número!";
 	}
-	var value = parseInt(g[1]);
+	var value = parseInt(guess);
 	if (isNaN(value)) {
-		return user + ", o argumento que você passou não é um numero!";
+		return user + ", o chute que você deu não é um número válido!";
 	}
 	var msg = "";
 	console.log("The values are:" + value + " " + guess_number);
 	if (value > guess_number) {
-		msg += user + ", o numero que estou pensando eh menor que isso!";
+		msg += user + ", o número que estou pensando é <code>menor</code> que isso!";
 	} else if (value < guess_number) {
-		msg += user + ", o numero que estou pensando eh maior que isso!";
+		msg += user + ", o número que estou pensando é <code>maior</code> que isso!";
 	} else {
-		msg += user + ", parabens! Acertou o numero!";
+		msg += user + ", parabéns! <code>Acertou</code> o número! Vou gerar outro!";
 		guess_number = Math.floor(Math.random() * 1000) + 1;
 	}
 	return msg;

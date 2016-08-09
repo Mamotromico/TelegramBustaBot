@@ -1,15 +1,16 @@
 function DiceCommand(user, dice) {
 	var res = dice.split(" ");
+	res = res.filter(function(s){return s!=""});
 	console.log(res);
 
 	var msg = user;
-	var dice_count = res.length - 1;
+	var dice_count = res.length;
 
 	var valid = true;
 
 	var dice_input = [];
 
-	for (var i = 1; i < res.length; i++) {
+	for (var i = 0; i < res.length; i++) {
 		if (isNaN(parseInt(res[i]))) {
 			valid = false;
 			break;
@@ -29,10 +30,10 @@ function DiceCommand(user, dice) {
 			var result = Math.floor(Math.random() * dice_size) + 1;
 			msg += "" + result + "(1-" + dice_size + ")!";
 		} else {
-			msg += " jogou " + dice_input.length + " dados! E tirou ";
+			msg += " jogou <code>" + dice_input.length + "</code> dados! E tirou:";
 			for (var i = 0; i < dice_input.length; i++) {
 				var result = Math.floor(Math.random() * dice_input[i]) + 1;
-				msg += "" + result + "(1-" + dice_input[i] + ")!";
+				msg += "\n" + result + " <i>(1-" + dice_input[i] + ")</i>";
 			}
 		}
 	} else {
@@ -46,6 +47,6 @@ module.exports = {
     return DiceCommand(struct.message.from.first_name,struct.message.text);
   },
   help: function () {
-    return "/dice ([tamanho dado]) - Jogue um dado!";
+    return "([tamanho dado]) - Jogue um dado!";
   }
 };
