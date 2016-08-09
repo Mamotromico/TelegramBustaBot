@@ -4,20 +4,21 @@ var https = require('https');
 var key = require('./key');
 
 var modules = {
-	ask: require('./module/ask'),
-	attr: require('./module/attr'),
+	//ask: require('./module/ask'),
+	//attr: require('./module/attr'),
 	bubuntu: require('./module/bubuntu'),
 	coin: require('./module/coin'),
-	dice: require('./module/dice'),
-	fodaci: require('./module/fodaci'),
-	guess: require('./module/guess'),
-	math: require('./module/math'),
-	rpg: require('./module/rpg'),
-	teste : require('./module/teste'),
-	ttt : require('./module/ttt'),
-	versus: require('./module/versus'),	
-	grito: require('./module/grito'),	
-	mata: require('./module/mata'),	
+	//dice: require('./module/dice'),
+	//fodaci: require('./module/fodaci'),
+	//guess: require('./module/guess'),
+	//math: require('./module/math'),
+	//rpg: require('./module/rpg'),
+	//teste : require('./module/teste'),
+	//ttt : require('./module/ttt'),
+	//versus: require('./module/versus'),	
+	//grito: require('./module/grito'),	
+	//mata: require('./module/mata'),	
+	//birl: require('./module/birl'),	
 }
 
 var last_update_id = 0;
@@ -34,6 +35,17 @@ if ( typeof String.prototype.isCommand != 'function') {
 	};
 }
 
+function PrepareCommandString(str,mod){
+	var reg = new RegExp("^\\/"+mod+"(?:@BustaBot)?\\s?(.*)$");
+	var cap = str.match(reg);
+	if(cap.length!=2){
+		console.log("No command captured");
+		return "";
+	}
+	console.log("Exp captured"+cap[1]);
+	return cap[1];
+}
+
 function AnswerMessages(obj) {
 	// Check if the message is OK!
 	if (obj.ok) {
@@ -45,17 +57,13 @@ function AnswerMessages(obj) {
 			if (struct.update_id < last_update_id) {
 				continue;
 			}
+			// Check if the message is not empty
 			if(!struct.message || !struct.message.text){
-				console.log("Invalid structures");
+				console.log("ERROR: Message was empty");
 				continue;
 			}
 			// Update the last message id parsed.
 			last_update_id = Math.max(last_update_id, struct.update_id + 1);
-
-			//chat_id: struct.message.chat.id,
-			//user_first_name: struct.message.from.first_name,
-			//text_message: struct.message.text,
-			//message_id: struct.message.message_id
 
 			console.log("Answering MSG ID: " + struct.update_id + " from " + struct.message.from.first_name);
 			console.log(struct.message.text);
@@ -63,38 +71,55 @@ function AnswerMessages(obj) {
 			if (struct.message.text) {
 				for (var mod in modules) {
 					if (modules.hasOwnProperty(mod)) {
-						if (struct.message.text.isCommand(mod)) {
-							SendMessage(struct, modules[mod].execute(struct));
+						if(struct.message.text.isCommand(mod)){
+							struct.message.text = PrepareCommandString(struct.message.text,mod);
+							SendMessage(struct, modules[mod].execute(struct),"HTML");
 							return;
 						}
 					}
 				}
 				if (struct.message.text.isCommand("help")) {
-					SendMessage(struct, HelpCommand(struct));
+					SendMessage(struct, HelpCommand(struct),"");
 				}else if(struct.message.text.indexOf("@BustaBot")>-1){
-					SendMessage(struct, MentionCommand(struct));
+					SendMessage(struct, MentionCommand(struct),"");
+				}else if(struct.message.text.isCommand("botfather")){
+					SendMessage(struct,BotFatherCommand(),"");
+				}else{
+					console.log("Not a command. Ignore.");
 				}
 			}
 		}
 	}
 }
 
+function BotFatherCommand(){
+	var msg = "help - shows help\n";
+	for (var mod in modules) {						
+		if (modules.hasOwnProperty(mod)) {
+			msg += mod+" - "+modules[mod].help()+"\n";
+		}
+	}
+	return msg;
+}
+
 function HelpCommand(struct) {
 	var msg = struct.message.from.first_name + ", você gostaria de saber mais sobre o BustaBot?\n";
-	msg += "O bot possui os seguintes comandos: \n\n";
+	msg += "O bot possui os seguintes comandos: \n";
 	for (var mod in modules) {
 		if (modules.hasOwnProperty(mod)) {
-			console.log("Printing "+mod+" help:" + modules[mod].help());
-			//msg += modules[mod].help() + "\n";
+			//console.log("Printing "+mod+" help:" + modules[mod].help());
+			msg += "/"+ mod + " " + modules[mod].help() + "\n";
 		}
 	}
 	// msg += "/ask <algo> - Pergunte qualquer coisa ao @BustaBot!\n";
 	// msg += "/guess <valor> - Adivinhe o número que estou pensando!\n";
 	// msg += "/versus ([competidores]) - Descubra quem é o melhor!\n";
-	msg += "/help - Peca ajuda ao @BustaBot!\n\n";
-	msg += "<> são parâmetros obrigatórios.\n";
-	msg += "() são parâmetros múltiplos.\n";
-	msg += "[] são parâmetros opcionais.\n";
+	msg += "/help - Peça ajuda ao @BustaBot!\n";
+	msg += "<>; são parâmetros obrigatórios.";
+	msg += "() são parâmetros múltiplos.";
+	msg += "[] são parâmetros opcionais.";
+	
+	//msg = "wat";
 	return msg;
 }
 
@@ -103,16 +128,19 @@ function MentionCommand(struct) {
 	return msg;
 }
 
-function SendMessage(struct, msg) {
-	//var final_msg = msg.replace(/[^a-zA-Z0-9 !,\(\)\-+\[\]\n@\{\}\\\/\<\>\|]/g, "*");
+function SendMessage(struct, msg, mode) {
 	var final_msg = encodeURI(msg);
-	console.log("Sending msg: " + final_msg);
-	https.get("https://api.telegram.org/bot"+key.value()+"/sendMessage?chat_id=" + struct.message.chat.id + "&text=" + final_msg + "&reply_to_message_id=" + struct.message.message_id+"&parse_mode=HTML", function(res) {
+	var final_request = "https://api.telegram.org/bot"+key.value()+"/sendMessage?chat_id=" + struct.message.chat.id + "&text=" + final_msg + "&reply_to_message_id=" + struct.message.message_id+(mode!=""?"&parse_mode="+mode:"");
+	//console.log(final_request);
+	https.get(final_request, function(res) {
 		if (res.statusCode == 200) {
 			console.log("Sending msg 200, OK!");
+		}else{
+			console.log("Sending msg ERROR: " + res.statusCode);
+			// TODO imprimir erro no console?
 		}
 	}).on('error', function(e) {
-		console.log("Got error: " + e.message);
+		console.log("Sending msg ERROR: " + e.message);
 	});
 }
 
@@ -134,5 +162,5 @@ setInterval(function() {
 	}).on('error', function(e) {
 		console.log("Got error: " + e.message);
 	});
-}, 1000);
+}, 100);
 

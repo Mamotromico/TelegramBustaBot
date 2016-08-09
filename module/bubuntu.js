@@ -93,6 +93,6 @@ module.exports = {
     return generateName();
   },
   help: function () {
-    return "/bubuntu - Gera um nome de versão do bubuntu!";
+    return "Gera um nome de versão do bubuntu!";
   }
 };
