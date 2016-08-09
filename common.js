@@ -1,7 +1,7 @@
 ﻿var https = require('https');
 
 var SendMessage = function (struct, msg, mode, key) {
-	var final_msg = encodeURI(msg);
+	var final_msg = encodeURIComponent(msg);
 	var final_request = "https://api.telegram.org/bot"+key+"/sendMessage?chat_id=" + struct.message.chat.id + "&text=" + final_msg + "&reply_to_message_id=" + struct.message.message_id+(mode!=""?"&parse_mode="+mode:"");
 	//console.log(final_request);
 	https.get(final_request, function(res) {
