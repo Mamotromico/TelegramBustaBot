@@ -30,15 +30,19 @@
 	
 	out += "<b>"+arr[0]+"</b>\n<code>";
 	
+	var sum = 0;
 	for(var n = 0; n<num; n++){
-		res = Math.floor(Math.random()*size)+bonus;
-		out += "" + res + " ";
+		res = Math.floor(Math.random()*size)+1;
+		if(num>1){
+			out += "" + res + ((n!=(num-1))?"+":"");
+		}
+		sum += res;
 	}
-	out += "</code>";
+	out += (bonus>0?"+"+bonus:"") + " = " + (sum+bonus)+ "</code>";
 	
-	console.log("num+num"+num);
-	console.log("size"+size);
-	console.log("bonus"+bonus);
+	//console.log("num"+num);
+	//console.log("size"+size);
+	//console.log("bonus"+bonus);
 
 	return out;
 }

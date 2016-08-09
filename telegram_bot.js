@@ -22,5 +22,5 @@ setInterval(function() {
 	common.GetFromBot(bustabot);
 	// @rpgadvbot
 	common.GetFromBot(rpgadvbot);
-}, 100);
+}, 1000);
 
