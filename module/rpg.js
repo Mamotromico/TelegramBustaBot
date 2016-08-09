@@ -1,8 +1,8 @@
-function RPGCommand(user, rpg_msg) {
-	var target = rpg_msg.split(" ");
+function Command(user, rpg_msg) {
+	var target = rpg_msg;
 	var target_name = user;
-	if (target.length == 2) {
-		target_name = target[1];
+	if (target != "") {
+		target_name = target;
 	}
 	var value = 0;
 	for (var i = 0; i < target_name.length; i++) {
@@ -10,18 +10,18 @@ function RPGCommand(user, rpg_msg) {
 	}
 	var rpg_class = ["Guerreiro", "Mago", "Ladino", "Druida", "Caçador", "Clerigo", "Paladino", "Druida", "Bárbaro", "Bruxo", "Bardo", "Dançarino", "Templário", "Mendigo", "Cavaleiro"];
 	if (target_name == user) {
-		var msg = user + ", sua classe de RPG eh " + rpg_class[value % rpg_class.length] + "!";
+		var msg = user + ", sua classe de RPG é <code>" + rpg_class[value % rpg_class.length] + "</code>!";
 	} else {
-		var msg = user + ", a classe de RPG do(a) " + target_name + " eh " + rpg_class[value % rpg_class.length] + "!";
+		var msg = user + ", a classe de RPG do(a) " + target_name + " é <code>" + rpg_class[value % rpg_class.length] + "</code>!";
 	}
 	return msg;
 }
 
 module.exports = {
   execute: function (struct) {
-    return RPGCommand(struct.message.from.first_name,struct.message.text);
+    return Command(struct.message.from.first_name,struct.message.text);
   },
   help: function () {
-    return "/rpg [nome] - Descubra sua classe na fantasia!";
+    return "[nome] - Descubra sua classe na fantasia!";
   }
 };

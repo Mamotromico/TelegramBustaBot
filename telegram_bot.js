@@ -12,7 +12,7 @@ var modules = {
 	//fodaci: require('./module/fodaci'),
 	//guess: require('./module/guess'),
 	//math: require('./module/math'),
-	//rpg: require('./module/rpg'),
+	rpg: require('./module/rpg'),
 	//teste : require('./module/teste'),
 	//ttt : require('./module/ttt'),
 	//versus: require('./module/versus'),	
