@@ -31,8 +31,8 @@ function HelpCommand(struct, bot) {
 	return msg;
 }
 
-var PrepareCommandString = function (str,mod){
-	var reg = new RegExp("^\\/"+mod+"(?:@BustaBot)?\\s?(.*)$");
+var PrepareCommandString = function (str,mod,botname){
+	var reg = new RegExp("^\\/"+mod+"(?:"+botname+")?\\s?(.*)$");
 	var cap = str.match(reg);
 	if(cap.length!=2){
 		console.log("No command captured");
@@ -105,7 +105,7 @@ module.exports = {
 					for (var mod in bot.modules) {
 						if (bot.modules.hasOwnProperty(mod)) {
 							if(struct.message.text.isCommand(mod)){
-								struct.message.text = PrepareCommandString(struct.message.text,mod);
+								struct.message.text = PrepareCommandString(struct.message.text,mod,bot.botname);
 								SendMessage(struct, bot.modules[mod].execute(struct),"HTML",bot.key);
 								return;
 							}

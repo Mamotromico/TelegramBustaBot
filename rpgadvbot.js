@@ -1,5 +1,5 @@
 ﻿var modules = {
-	//ask: require('./rpgadvbot_module/ask'),
+	genAtt: require('./rpgadvbot_module/genAtt'),
 }
 
 var common = require('./common');
