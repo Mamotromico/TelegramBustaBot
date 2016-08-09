@@ -1,4 +1,4 @@
-function Command(user, rpg_msg) {
+﻿function Command(user, rpg_msg) {
 	var target = rpg_msg;
 	var target_name = user;
 	if (target != "") {

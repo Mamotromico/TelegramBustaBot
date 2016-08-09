@@ -1,11 +1,11 @@
-function VersusCommand(user, vs_msg) {
+﻿function VersusCommand(user, vs_msg) {
 	vs_data = vs_msg.split(" ");
 	var msg = "";
-	if (vs_data.length < 3) {
+	if (vs_data.length < 2) {
 		msg = user + ", tem que ter pelo menos dois competidores!";
 	} else {
-		var res = Math.floor(Math.random() * (vs_data.length - 1)) + 1;
-		msg = user + ", o vencedor supremo foi " + vs_data[res] + "!";
+		var res = Math.floor(Math.random() * (vs_data.length));
+		msg = user + ", o vencedor supremo foi <code>" + vs_data[res] + "</code>!";
 	}
 	return msg;
 }
@@ -15,6 +15,6 @@ module.exports = {
     return VersusCommand(struct.message.from.first_name,struct.message.text);
   },
   help: function () {
-    return "/versus ([competidores])";
+    return "([competidores])";
   }
 };

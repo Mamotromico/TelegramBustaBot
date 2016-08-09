@@ -1,4 +1,4 @@
-var guess_number = Math.floor(Math.random() * 1000) + 1;
+﻿var guess_number = Math.floor(Math.random() * 1000) + 1;
 var guess_placar = [];
 
 function GuessCommand(user, guess) {
@@ -27,6 +27,6 @@ module.exports = {
     return GuessCommand(struct.message.from.first_name,struct.message.text);
   },
   help: function () {
-    return "/guess <valor> - Adivinhe o número que estou pensando!";
+    return "<valor> - Adivinhe o número que estou pensando!";
   }
 };

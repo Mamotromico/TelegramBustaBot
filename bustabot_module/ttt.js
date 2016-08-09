@@ -1,4 +1,4 @@
-var ttt_board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+﻿var ttt_board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
 var x_char = '❌';
 var o_char = '⭕';
 var n_char = '◻';

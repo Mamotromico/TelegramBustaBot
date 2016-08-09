@@ -1,4 +1,4 @@
-function MathCommand(user, msg) {
+﻿function MathCommand(user, msg) {
 	var target = msg.split(" ");
 	var subject = "matemática";
 	if (target.length == 2) {

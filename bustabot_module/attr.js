@@ -1,4 +1,4 @@
-function PrintAttribute(value){
+﻿function PrintAttribute(value){
 	var attr = "";
 	for(var i=0; i<value; i++){
 		attr += "⚫";
@@ -10,11 +10,11 @@ function PrintAttribute(value){
 }
 
 function AttrCommand(user, msg) {
-	var target = msg.split(" ");
+	var target = msg;
 	
 	var target_name = user;
-	if (target.length == 2) {
-		target_name = target[1];
+	if (target != "") {
+		target_name = target;
 	}
 	
 	var attributes = ["STR", "DEX", "CON", "INT", "WIS", "CHA"];
@@ -48,6 +48,6 @@ module.exports = {
     return AttrCommand(struct.message.from.first_name,struct.message.text);
   },
   help: function () {
-    return "/attr [user] - Descubra quais são seus atributos!";
+    return "[user] - Descubra quais são seus atributos!";
   }
 };

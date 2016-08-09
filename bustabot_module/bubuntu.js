@@ -1,4 +1,4 @@
-alphabet = "ABCDEFGHIJLMNOPQRSTUVXZ";
+﻿alphabet = "ABCDEFGHIJLMNOPQRSTUVXZ";
 
 animalName = new Array();
 animalName["A"] = ["fArara", "fAnaconda", "fAbelha", "fÁguia", "mAlce", "fAnta", "fAndorinha", "mAntílope", "fAranha", "mAvestruz"];

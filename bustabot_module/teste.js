@@ -1,4 +1,4 @@
-function lol(val){
+﻿function lol(val){
 	return val*2;
 }
 

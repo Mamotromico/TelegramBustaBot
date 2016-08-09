@@ -1,4 +1,4 @@
-function AskCommand(user, question) {
+﻿function AskCommand(user, question) {
 	msg = user + ", eu sinceramente não sei.";
 	return msg;
 }

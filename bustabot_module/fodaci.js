@@ -8,6 +8,6 @@ module.exports = {
     return FodaciCommand(struct.message.from.first_name);
   },
   help: function () {
-    return "/fodaci - d? uma resposta boa para isso.";
+    return "/fodaci - dá uma resposta boa para isso.";
   }
 };

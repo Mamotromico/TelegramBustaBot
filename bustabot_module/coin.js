@@ -1,4 +1,4 @@
-function CoinCommand(user, coin) {
+﻿function CoinCommand(user, coin) {
 	var inp = coin;
 	if (inp) {
 		var coin = ["cara", "coroa"];
