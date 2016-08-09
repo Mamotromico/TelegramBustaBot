@@ -38,6 +38,6 @@ module.exports = {
     return Command(struct.message.from.first_name,struct.message.text);
   },
   help: function () {
-    return "[user] - Gera atributos para D&D e Pathfinder!";
+    return "[user] - Gera atributos para DnD e Pathfinder!";
   }
 };

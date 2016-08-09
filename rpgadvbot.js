@@ -1,5 +1,5 @@
 ﻿var modules = {
-	genAtt: require('./rpgadvbot_module/genAtt'),
+	genatt: require('./rpgadvbot_module/genatt'),
 }
 
 var common = require('./common');
